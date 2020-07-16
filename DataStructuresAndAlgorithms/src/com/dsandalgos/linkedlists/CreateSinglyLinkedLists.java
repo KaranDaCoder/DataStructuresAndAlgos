@@ -36,6 +36,31 @@ public class CreateSinglyLinkedLists {
 		curr_node.next = new_node_end;
 	}
 
+	// fetch an element inside of a single Linked List
+	public void fetchAnElementWithinLinkedList(CreateSinglyLinkedLists node, int data) {
+		boolean flag = false;
+
+		if (head == null) {
+			System.out.println("Linked List is Empty!!");
+			return;
+		}
+
+		Node curr_node = head;
+		while (curr_node != null) {
+			if (curr_node.data == data) {
+				flag = true;
+				break;
+			}
+			curr_node = curr_node.next;
+		}
+		if (flag) {
+			System.out.println("Node with data " + data + " found");
+		} else {
+			System.out.println("Node with data " + data + " Not found");
+		}
+
+	}
+
 	// display linked list
 	public void displayLinkedList() {
 		Node curr_node = head;
@@ -81,13 +106,15 @@ public class CreateSinglyLinkedLists {
 		createSinglyLinkedLists.displayLinkedList();
 		// find length of LinkedList
 		createSinglyLinkedLists.getLengthOfLinkedList();
-		
+
 		createSinglyLinkedLists.insertNodeAtEnd(44);
 		createSinglyLinkedLists.insertNodeAtEnd(144);
 		createSinglyLinkedLists.insertNodeAtStart(124);
 		createSinglyLinkedLists.displayLinkedList();
 		// find length of LinkedList
 		createSinglyLinkedLists.getLengthOfLinkedList();
+
+		createSinglyLinkedLists.fetchAnElementWithinLinkedList(createSinglyLinkedLists, 111);
 	}
 
 }
