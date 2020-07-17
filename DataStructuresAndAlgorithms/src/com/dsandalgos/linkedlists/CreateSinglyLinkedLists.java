@@ -5,6 +5,15 @@ public class CreateSinglyLinkedLists {
 
 	private static class Node {
 		private int data;
+		
+		public int getData() {
+			return data;
+		}
+
+		public void setData(int data) {
+			this.data = data;
+		}
+
 		private Node next;
 
 		public Node(int data) {
