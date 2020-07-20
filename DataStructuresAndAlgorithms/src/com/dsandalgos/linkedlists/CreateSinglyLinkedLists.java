@@ -1,5 +1,7 @@
 package com.dsandalgos.linkedlists;
 
+//import com.dsandalgos.linkedlists.problems.LinkedListsProblems_ReverseLinkedList.Node;
+
 public class CreateSinglyLinkedLists {
 	private Node head;
 
@@ -94,6 +96,26 @@ public class CreateSinglyLinkedLists {
 		System.out.println("Length of LinkedList == " + count);
 		return count;
 	}
+	
+	
+	public Node reverseSinglyList(Node head) {
+		if (head == null)
+			return head;
+
+		Node curr_node = head;
+		Node new_head = null;
+		Node next = null;
+
+		while (curr_node != null) {
+			next = curr_node.next;
+			curr_node = new_head;
+			new_head = curr_node;
+			curr_node = next;
+		}
+		System.out.println(new_head);
+		return new_head;
+
+	}
 
 	public static void main(String[] args) {
 
@@ -105,25 +127,28 @@ public class CreateSinglyLinkedLists {
 		createSinglyLinkedLists.head.next = second;
 		second.next = third;
 		third.next = fourth;
-		System.out.println("Linked list and it's length before inserting a node at start... ");
+//		System.out.println("Linked list and it's length before inserting a node at start... ");
+//		createSinglyLinkedLists.displayLinkedList();
+//		createSinglyLinkedLists.getLengthOfLinkedList();
+//
+//		createSinglyLinkedLists.insertNodeAtStart(18);
+//		System.out.println("Linked list and it's length After inserting a node at start... ");
+//		// display the linkedlist
+//		createSinglyLinkedLists.displayLinkedList();
+//		// find length of LinkedList
+//		createSinglyLinkedLists.getLengthOfLinkedList();
+//
+//		createSinglyLinkedLists.insertNodeAtEnd(44);
+//		createSinglyLinkedLists.insertNodeAtEnd(144);
+//		createSinglyLinkedLists.insertNodeAtStart(124);
+//		createSinglyLinkedLists.displayLinkedList();
+//		// find length of LinkedList
+//		createSinglyLinkedLists.getLengthOfLinkedList();
+//
+//		createSinglyLinkedLists.fetchAnElementWithinLinkedList(createSinglyLinkedLists, 111);
 		createSinglyLinkedLists.displayLinkedList();
-		createSinglyLinkedLists.getLengthOfLinkedList();
-
-		createSinglyLinkedLists.insertNodeAtStart(18);
-		System.out.println("Linked list and it's length After inserting a node at start... ");
-		// display the linkedlist
+		System.out.println(createSinglyLinkedLists.reverseSinglyList(createSinglyLinkedLists.head));
 		createSinglyLinkedLists.displayLinkedList();
-		// find length of LinkedList
-		createSinglyLinkedLists.getLengthOfLinkedList();
-
-		createSinglyLinkedLists.insertNodeAtEnd(44);
-		createSinglyLinkedLists.insertNodeAtEnd(144);
-		createSinglyLinkedLists.insertNodeAtStart(124);
-		createSinglyLinkedLists.displayLinkedList();
-		// find length of LinkedList
-		createSinglyLinkedLists.getLengthOfLinkedList();
-
-		createSinglyLinkedLists.fetchAnElementWithinLinkedList(createSinglyLinkedLists, 111);
 	}
 
 }
