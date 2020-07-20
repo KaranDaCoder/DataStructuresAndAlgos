@@ -23,20 +23,16 @@ public class LinkedListsProblems_ReverseLinkedList {
 
 		while (curr_node != null) {
 			next = curr_node.next;
-			curr_node = new_head;
+			curr_node.next = new_head;
 			new_head = curr_node;
 			curr_node = next;
 		}
-		System.out.println(new_head);
 		return new_head;
 
 	}
 
-	public void displayLinkedList() {
-		Node curr_node = head;
-
-		if (curr_node == null)
-			return;
+	public void displayLinkedList(Node head_node) {
+		Node curr_node = head_node;
 
 		while (curr_node != null) {
 			System.out.print(curr_node.data + "-->");
@@ -47,20 +43,23 @@ public class LinkedListsProblems_ReverseLinkedList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		LinkedListsProblems_ReverseLinkedList linkedListsProblems_ReverseLinkedList = new LinkedListsProblems_ReverseLinkedList();
-		linkedListsProblems_ReverseLinkedList.head = new Node (12); // 12 | null;
-		Node second = new Node(423); // 423 | null
-		Node third = new Node(14);  // 14 | null;
-		Node fourth = new Node(44);	// 44 | null
-		// Link the linked list
-		linkedListsProblems_ReverseLinkedList.head.next = second;
-		second.next = third;
+		
+		LinkedListsProblems_ReverseLinkedList linkedList = new LinkedListsProblems_ReverseLinkedList();
+		
+		
+		Node head = new Node(21);
+		Node second = new Node(22);
+		Node third = new Node(412);
+		Node fourth = new Node(11);
+		
+		head.next = second;
+		head.next.next = third;
 		third.next = fourth;
 		
-		System.out.println("Linked List before reversal ... ");
-		linkedListsProblems_ReverseLinkedList.displayLinkedList();
-		Node new_head = linkedListsProblems_ReverseLinkedList.reverseSinglyList(linkedListsProblems_ReverseLinkedList.head);
-		linkedListsProblems_ReverseLinkedList.reverseSinglyList(new_head);
+		linkedList.displayLinkedList(head);
+		
+		linkedList.displayLinkedList(linkedList.reverseSinglyList(head));
+	
 		
 	}
 

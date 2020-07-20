@@ -128,7 +128,7 @@ public class CreateSinglyLinkedLists {
 		second.next = third;
 		third.next = fourth;
 //		System.out.println("Linked list and it's length before inserting a node at start... ");
-//		createSinglyLinkedLists.displayLinkedList();
+//		createSinglyLinkedLists.display LinkedList();
 //		createSinglyLinkedLists.getLengthOfLinkedList();
 //
 //		createSinglyLinkedLists.insertNodeAtStart(18);
