@@ -51,6 +51,7 @@ public class ArrayProblems_ReverseRotateArray {
 		return Array;
 	}
 
+	// reverse array recursively
 	public static void reverseArray_RecursiveApproach(int[] arr, int start, int end) {
 
 		if (start >= end)
