@@ -51,6 +51,17 @@ public class ArrayProblems_ReverseRotateArray {
 		return Array;
 	}
 
+	public static void reverseArray_RecursiveApproach(int[] arr, int start, int end) {
+
+		if (start >= end)
+			return;
+
+		int temp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = temp;
+		reverseArray_RecursiveApproach(arr, start + 1, end - 1);
+	}
+
 	// 0 1 2 3 4 5 6
 	// Array before reversing == [2, 4, 9, 1, 6, 5, 11] // given array
 	// Reversed Array first == [1, 9, 4, 2, 6, 5, 11] // 0 --> L - 1 - K
@@ -93,12 +104,21 @@ public class ArrayProblems_ReverseRotateArray {
 		return arr;
 	}
 
+	// Utility to print the array
+	static void printArray(int arr[], int size) {
+		for (int i = 0; i < size; i++)
+			System.out.print(arr[i] + " ");
+		System.out.println("");
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] a = new int[] { 2, 4, 9, 1, 6, 5, 11 };
 		// reverseArray(a, 0, a.length - 1);
 		// reverseArray(a);
-		leftRotateArrayByK(a, 3);
+		// leftRotateArrayByK(a, 3);
+		reverseArray_RecursiveApproach(a, 0, a.length - 1);
+		printArray(a, a.length);
 	}
 
 }
