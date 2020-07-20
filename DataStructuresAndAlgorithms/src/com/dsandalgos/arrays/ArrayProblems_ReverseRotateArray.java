@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class ArrayProblems_ReverseRotateArray {
 
+	/*
+	 * reverse a given array return : reversed array O(n)
+	 */
 	public static int[] reverseArray(int[] arr) {
 		int start = 0;
 		int end = arr.length - 1;
@@ -24,6 +27,10 @@ public class ArrayProblems_ReverseRotateArray {
 		return arr;
 	}
 
+	/*
+	 * reverse a given array with start and end indices (Useful during array
+	 * rotations) return : reversed array O(n)
+	 */
 	public static int[] reverseArray(int[] Array, int start, int end) {
 		System.out.println("Array before reversing == " + Arrays.toString(Array));
 
