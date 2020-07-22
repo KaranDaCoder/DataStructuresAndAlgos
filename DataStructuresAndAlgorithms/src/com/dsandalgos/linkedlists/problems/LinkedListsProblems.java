@@ -88,7 +88,7 @@ public class LinkedListsProblems {
 		}
 	}
 
-	// Insert Node in Sorted Linked List without affecting  the order
+	// Insert Node in Sorted Linked List without affecting the order
 	public Node insertNodeInASortedLinkedListKeepingTheOrder(int data) {
 		Node new_node = new Node(data);
 
@@ -105,6 +105,32 @@ public class LinkedListsProblems {
 		}
 		new_node.next = curr_node;
 		temp.next = new_node;
+
+		return head;
+	}
+
+	// remove a node from linked list
+	public Node removeNodeFromALinkedList(int data) {
+		Node curr_node = head;
+		Node runner = null;
+
+		// if the data is from the head node
+		if (curr_node != null && curr_node.data == data) {
+			head = curr_node.next;
+			return head;
+		}
+
+		while (curr_node != null && curr_node.data != data) {
+			runner = curr_node;
+			curr_node = curr_node.next;
+		}
+		// linked list exhausted but data not found
+		if (curr_node == null) {
+			System.out.println("element not found inside linked list");
+			return head;
+		}
+
+		runner.next = curr_node.next;
 
 		return head;
 	}
@@ -140,6 +166,8 @@ public class LinkedListsProblems {
 
 		linkedList.displayLinkedList(linkedList.head);
 		linkedList.insertNodeInASortedLinkedListKeepingTheOrder(10);
+		linkedList.displayLinkedList(linkedList.head);
+		linkedList.removeNodeFromALinkedList(111);
 		linkedList.displayLinkedList(linkedList.head);
 
 	}
