@@ -1,20 +1,12 @@
 package com.dsandalgos.linkedlists;
 
-//import com.dsandalgos.linkedlists.problems.LinkedListsProblems_ReverseLinkedList.Node;
 
 public class CreateSinglyLinkedLists {
 	private Node head;
 
 	private static class Node {
 		private int data;
-		
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
+	
 
 		private Node next;
 
@@ -96,34 +88,15 @@ public class CreateSinglyLinkedLists {
 		System.out.println("Length of LinkedList == " + count);
 		return count;
 	}
+
 	
-	
-	public Node reverseSinglyList(Node head) {
-		if (head == null)
-			return head;
-
-		Node curr_node = head;
-		Node new_head = null;
-		Node next = null;
-
-		while (curr_node != null) {
-			next = curr_node.next;
-			curr_node = new_head;
-			new_head = curr_node;
-			curr_node = next;
-		}
-		System.out.println(new_head);
-		return new_head;
-
-	}
-
 	public static void main(String[] args) {
 
 		CreateSinglyLinkedLists createSinglyLinkedLists = new CreateSinglyLinkedLists();
 		createSinglyLinkedLists.head = new Node(11); // 11|null
 		Node second = new Node(22); // 22|null
 		Node third = new Node(99); // 99|null
-		Node fourth = new Node(8); // 8|null
+		Node fourth = new Node(8888); // 8|null
 		createSinglyLinkedLists.head.next = second;
 		second.next = third;
 		third.next = fourth;
@@ -147,8 +120,7 @@ public class CreateSinglyLinkedLists {
 //
 //		createSinglyLinkedLists.fetchAnElementWithinLinkedList(createSinglyLinkedLists, 111);
 		createSinglyLinkedLists.displayLinkedList();
-		System.out.println(createSinglyLinkedLists.reverseSinglyList(createSinglyLinkedLists.head));
-		createSinglyLinkedLists.displayLinkedList();
+
 	}
 
 }
