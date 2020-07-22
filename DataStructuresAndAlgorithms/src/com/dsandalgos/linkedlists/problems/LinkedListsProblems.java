@@ -135,6 +135,41 @@ public class LinkedListsProblems {
 		return head;
 	}
 
+	// detect a loop inside a Singly Linked List
+	public boolean isLoopPresentInsideALinkedList() {
+		Node curr_node = head;
+		Node runner = head;
+		// move curr node by 1 step and runner node by 2 steps
+		while (runner != null && runner.next != null) {
+			curr_node = curr_node.next;
+			runner = runner.next.next;
+			// if at any point they become equal, a loop is detected for sure.
+			if (curr_node == runner)
+				return true;
+		}
+		// else a loop is not detected inside Singly Linked List
+		return false;
+	}
+
+	// Util to create a Lopped Linked List
+	public void createLoopedLinkedList() {
+		Node head = new Node(1);
+		Node second = new Node(2);
+		Node third = new Node(3);
+		Node fourth = new Node(4);
+		Node fifth = new Node(5);
+		Node six = new Node(26);
+
+		this.head = head; // 1--head
+		head.next = second; // 1--2
+		second.next = third; // 1--2--3
+		third.next = fourth;// 1--2--3--4
+		fourth.next = fifth;// 1--2--3--4--5
+		fifth.next = six;// 1--2--3--4--5--26
+		six.next = third; // 1--2--3--4--5--26--3--4--5--26--3--4--5--26--3--4...
+
+	}
+
 	// Utility to display Singly Linked List
 	public void displayLinkedList(Node head_node) {
 		Node curr_node = head_node;
@@ -169,6 +204,8 @@ public class LinkedListsProblems {
 		linkedList.displayLinkedList(linkedList.head);
 		linkedList.removeNodeFromALinkedList(111);
 		linkedList.displayLinkedList(linkedList.head);
+		linkedList.createLoopedLinkedList();
+		System.out.println(linkedList.isLoopPresentInsideALinkedList());
 
 	}
 
