@@ -50,7 +50,7 @@ public class CreateDoublyLinkedList {
 	}
 
 	// Insert Node at the End of a Doubly Linked List
-	public Node inserNodeAtTheEndOfDoublyLinkedList(int data) {
+	public Node insertNodeAtTheEndOfDoublyLinkedList(int data) {
 		Node node = new Node(data);
 
 		if (isEmpty()) {
@@ -76,10 +76,26 @@ public class CreateDoublyLinkedList {
 			tail = null;
 		else {
 			head.next.previous = null;
+			
 		}
-
 		head = head.next;
-		temp.next = null;
+		length--;
+		return temp;
+	}
+
+	public Node deleteNodeAtEndOfDoublyLinkedList() {
+		Node temp = tail;
+
+		if (isEmpty())
+			throw new NoSuchElementException("Doubly Linked List is Empty...");
+
+		if (head == tail) {
+			head = null;
+		} else {
+			tail.previous.next = null;
+			
+		}
+		tail = tail.previous;
 		length--;
 		return temp;
 	}
@@ -89,8 +105,10 @@ public class CreateDoublyLinkedList {
 	public void printDoublyLinkedListForward() {
 
 		System.out.println("Printing Doubly Linked List From Head...");
-		if (head == null)
+		if (head == null) {
+			System.out.println("null");
 			return;
+		}
 
 		Node temp = head;
 		while (temp != null) {
@@ -103,8 +121,10 @@ public class CreateDoublyLinkedList {
 	// Print Doubly Linked List From Tail
 	public void printDoublyLinkedListBackward() {
 		System.out.println("Printing Doubly Linked List From Tail...");
-		if (tail == null)
+		if (tail == null) {
+			System.out.println("null");
 			return;
+		}
 
 		Node temp = tail;
 		while (temp != null) {
@@ -114,19 +134,45 @@ public class CreateDoublyLinkedList {
 		System.out.println("null");
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		CreateDoublyLinkedList createDoublyLinkedList = new CreateDoublyLinkedList();
-		createDoublyLinkedList.insertNodeAtBeginningOfDoublyLinkedList(11);
-		createDoublyLinkedList.insertNodeAtBeginningOfDoublyLinkedList(22);
-		createDoublyLinkedList.insertNodeAtBeginningOfDoublyLinkedList(33);
-		createDoublyLinkedList.inserNodeAtTheEndOfDoublyLinkedList(44);
-		createDoublyLinkedList.inserNodeAtTheEndOfDoublyLinkedList(55);
-		createDoublyLinkedList.printDoublyLinkedListBackward();
-		createDoublyLinkedList.deleteANodeAtBeginningInDoublyLinkedList();
-		// createDoublyLinkedList.printDoublyLinkedListForward();
-		createDoublyLinkedList.printDoublyLinkedListBackward();
 
+		createDoublyLinkedList.insertNodeAtTheEndOfDoublyLinkedList(44);
+		createDoublyLinkedList.insertNodeAtTheEndOfDoublyLinkedList(22);
+		createDoublyLinkedList.insertNodeAtTheEndOfDoublyLinkedList(33);
+		createDoublyLinkedList.insertNodeAtTheEndOfDoublyLinkedList(55);
+		
+		
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		createDoublyLinkedList.deleteNodeAtEndOfDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+
+		createDoublyLinkedList.deleteNodeAtEndOfDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		createDoublyLinkedList.deleteNodeAtEndOfDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		createDoublyLinkedList.deleteNodeAtEndOfDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		
+		/*
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		createDoublyLinkedList.deleteANodeAtBeginningInDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+
+		createDoublyLinkedList.deleteANodeAtBeginningInDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		createDoublyLinkedList.deleteANodeAtBeginningInDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+		
+		createDoublyLinkedList.deleteANodeAtBeginningInDoublyLinkedList();
+		createDoublyLinkedList.printDoublyLinkedListForward();
+*/
 	}
 
 }
