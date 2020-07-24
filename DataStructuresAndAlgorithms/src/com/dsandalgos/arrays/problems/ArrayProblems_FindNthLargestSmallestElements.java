@@ -37,6 +37,7 @@ public class ArrayProblems_FindNthLargestSmallestElements {
 			if (arr[i] < smallest) {
 				secondSmallest = smallest;
 				smallest = arr[i];
+				
 			}
 			// smallest < arr[i] < secondSmallest
 			if (smallest < arr[i] && arr[i] < secondSmallest) {
@@ -69,7 +70,7 @@ public class ArrayProblems_FindNthLargestSmallestElements {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = new int[] { -5, 40, 888, -11, 9, 1111 };
+		int[] arr = new int[] { -5, 40, 888, -11, -19, 1111 };
 
 		ArrayProblems_FindNthLargestSmallestElements arrayProblems_FindNthLargestSmallestElements = new ArrayProblems_FindNthLargestSmallestElements();
 		arrayProblems_FindNthLargestSmallestElements.findLargestElementInArrayWithoutSorting(arr);
