@@ -31,6 +31,15 @@ public class LinkedListsProblems {
 		return new_head;
 	}
 
+	// Reverse a Singly Linked List recursively
+	public Node reverseLinkedListRecursively(Node head) {
+		if (head == null)
+			return head;
+		reverseLinkedListRecursively(head.next);
+		System.out.print(head.data + "--->");
+		return head;
+	}
+
 	// find Middle Element Of a Singly Linked List
 	public Node findMiddleElementOfSinglyLinkedList(Node head) {
 
@@ -199,13 +208,15 @@ public class LinkedListsProblems {
 		fourth.next = fifth;
 		fourth.next.next = six;
 
+		// linkedList.displayLinkedList(linkedList.head);
+		// linkedList.insertNodeInASortedLinkedListKeepingTheOrder(10);
+		// linkedList.displayLinkedList(linkedList.head);
+		// linkedList.removeNodeFromALinkedList(111);
+		// linkedList.displayLinkedList(linkedList.head);
+		// linkedList.createLoopedLinkedList();
+		// System.out.println(linkedList.isLoopPresentInsideALinkedList());
 		linkedList.displayLinkedList(linkedList.head);
-		linkedList.insertNodeInASortedLinkedListKeepingTheOrder(10);
-		linkedList.displayLinkedList(linkedList.head);
-		linkedList.removeNodeFromALinkedList(111);
-		linkedList.displayLinkedList(linkedList.head);
-		linkedList.createLoopedLinkedList();
-		System.out.println(linkedList.isLoopPresentInsideALinkedList());
+		linkedList.reverseLinkedListRecursively(linkedList.head);
 
 	}
 
