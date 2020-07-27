@@ -1,5 +1,7 @@
 package com.dsandalgos.arrays.problems;
 
+import java.util.Arrays;
+
 public class ArrayProblems_FindNthLargestSmallestElements {
 
 	// 1. Find smallest Element in Array w/o sorting
@@ -73,10 +75,10 @@ public class ArrayProblems_FindNthLargestSmallestElements {
 		int[] arr = new int[] { -5, 40, 888, -11, -19, 1111 };
 
 		ArrayProblems_FindNthLargestSmallestElements arrayProblems_FindNthLargestSmallestElements = new ArrayProblems_FindNthLargestSmallestElements();
-		arrayProblems_FindNthLargestSmallestElements.findLargestElementInArrayWithoutSorting(arr);
-		arrayProblems_FindNthLargestSmallestElements.findSmallestElementInArrayWithoutSorting(arr);
-		arrayProblems_FindNthLargestSmallestElements.findSecondSmallestElementInArrayWithoutSorting(arr);
-		arrayProblems_FindNthLargestSmallestElements.findSecondLargestElementInArrayWithoutSorting(arr);
+		//arrayProblems_FindNthLargestSmallestElements.findLargestElementInArrayWithoutSorting(arr);
+		//arrayProblems_FindNthLargestSmallestElements.findSmallestElementInArrayWithoutSorting(arr);
+		//arrayProblems_FindNthLargestSmallestElements.findSecondSmallestElementInArrayWithoutSorting(arr);
+		//arrayProblems_FindNthLargestSmallestElements.findSecondLargestElementInArrayWithoutSorting(arr);
 	}
 
 }
