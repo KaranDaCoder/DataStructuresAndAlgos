@@ -2,7 +2,7 @@ package com.dsandalgos.stack.stackimplementation;
 
 import java.util.EmptyStackException;
 
-public class CreateStack {
+public class CreateStack_SLL {
 	private Node top;
 	private int length;
 
@@ -16,7 +16,7 @@ public class CreateStack {
 
 	}
 
-	public CreateStack() {
+	public CreateStack_SLL() {
 		top = null;
 		length = 0;
 	}
@@ -60,7 +60,7 @@ public class CreateStack {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CreateStack createStack = new CreateStack();
+		CreateStack_SLL createStack = new CreateStack_SLL();
 		createStack.push(10);
 		createStack.push(20);
 		createStack.push(30);
